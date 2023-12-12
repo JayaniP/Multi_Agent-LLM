@@ -19,7 +19,7 @@ ae2 = Vehicle(vehicle_id=2)
 # Test CentralizedControlAgent
 #===================================================================================================================
 centralizedControl_agent = CentralizedControlAgent([ae1, ae2],"openAI-KEY")
-centralizedControl_agent.plan_route_for_vehicle(ae1, "London","shortest path")
+centralizedControl_agent.plan_route_for_vehicle(ae1, "Oxford", "Reading","shortest path")
 centralizedControl_agent.allocate_resources()
 
 # Test LocalNavigationAgent
