@@ -10,7 +10,7 @@ class SafetyMonitoringAgent:
         """
         Monitors the safety of the vehicle using data from the LiDAR sensor.
         """
-        lidar_data = [0.1, 0.2, 0.3]
+        lidar_data = [200, 300, 500]
         safety_analysis = self.perform_safety_analysis(lidar_data)
         print(f"Vehicle {self.vehicle.vehicle_id}: Safety analysis - {safety_analysis}")
 
