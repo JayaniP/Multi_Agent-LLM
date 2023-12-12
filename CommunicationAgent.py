@@ -36,7 +36,7 @@ class CommunicationAgent:
         """
         prompt = f"Generate traffic information for Vehicle {self.vehicle.vehicle_id}."
         response = openai.ChatCompletion.create(model="gpt-4",
-                                                messages=[{'role': 'assistant', 'content': prompt}],
-                                                max_tokens=3000)
+                                                messages=[{'role': 'system', 'content': prompt}],
+                                                max_tokens=1500)
         traffic_info = response["choices"][0]["message"]["content"]
         return traffic_info.strip()
