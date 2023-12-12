@@ -7,7 +7,7 @@ class LocalNavigationAgent:
         openai.api_key = self.api_key
 
     def navigate(self):
-        lidar_data = [0.1, 0.2, 0.3]
+        lidar_data = [200, 300, 500]
         obstacle_detected = self.detect_obstacles(lidar_data)
 
         if obstacle_detected:
@@ -37,7 +37,7 @@ class LocalNavigationAgent:
     def generate_alternative_route(self):
         prompt = f"Generate an alternative route for vehicle {self.vehicle.vehicle_id} due to obstacles."
         response = openai.ChatCompletion.create(model="gpt-4",
-                                                messages=[{'role': 'assistant', 'content': prompt}],
+                                                messages=[{'role': 'system', 'content': prompt}],
                                                 max_tokens=100)
         alternative_route = response["choices"][0]["message"]["content"]
         return alternative_route.strip()
