@@ -37,15 +37,3 @@ class CentralizedControlAgent:
                                                 max_tokens=1500)
         resource_allocation = response["choices"][0]["message"]["content"]
         return resource_allocation.strip()
-
-
-    def allocate_resources_for_vehicle(self, vehicle):
-        """
-        Allocates resources for a specific vehicle based on its planned route.
-        """
-        prompt = f"Allocate resources for vehicle {vehicle.vehicle_id} with route: {vehicle.route}."
-        response = openai.ChatCompletion.create(model="gpt-4",
-                                                messages=[{'role': 'assistant', 'content': prompt}],
-                                                max_tokens=1500)
-        resource_allocation = response["choices"][0]["message"]["content"]
-        return resource_allocation.strip()
