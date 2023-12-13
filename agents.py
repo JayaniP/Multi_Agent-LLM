@@ -65,11 +65,6 @@ maintenance_agent = MaintenanceAgent(ae1, "openAI-KEY")
 maintenance_agent.monitor_vehicle_health()
 maintenance_agent.schedule_maintenance()
 
-# Test HelpDeskAgent
-#==================================================================================================================
-helpdesk_agent = HelpDeskAgent("openAI-KEY")
-helpdesk_agent.handle_user_query(ae1, "What is the charging status of my vehicle?")
-
 # Test UserAgent
 #===================================================================================================================
 user_agent = UserAgent(1, "openAI-KEY")
